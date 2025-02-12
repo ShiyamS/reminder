@@ -1,0 +1,49 @@
+<div class="container">
+  <mat-card class="water-card">
+    <mat-card-header>
+      <mat-card-title>Poopi's Water Reminder</mat-card-title>
+      <mat-card-subtitle>Stay hydrated !</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="stats">
+        <h3>Today's Progress</h3>
+        <mat-progress-bar
+          [value]="(glassesConsumed / dailyGoal) * 100"
+          color="primary"
+        ></mat-progress-bar>
+        <p>{{ glassesConsumed }} / {{ dailyGoal }} glasses</p>
+      </div>
+
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="addGlass()">
+          <mat-icon>local_drink</mat-icon>
+          Add Glass
+        </button>
+
+        <button mat-raised-button color="accent" (click)="resetCount()">
+          <mat-icon>refresh</mat-icon>
+          Reset
+        </button>
+      </div>
+
+      <mat-form-field appearance="fill" class="reminder-interval">
+        <mat-label>Reminder Interval (minutes)</mat-label>
+        <input
+        matInput
+          type="number"
+          [(ngModel)]="reminderInterval"
+          min="1"
+          (change)="updateReminderInterval()"
+        />
+      </mat-form-field>
+
+      <mat-slide-toggle
+        [(ngModel)]="remindersEnabled"
+        (change)="toggleReminders()"
+      >
+        Enable Reminders
+      </mat-slide-toggle>
+    </mat-card-content>
+  </mat-card>
+</div>
