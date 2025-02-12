@@ -10,11 +10,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { MatInputModule } from '@angular/material/input'
-
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-reminder',
-  imports: [MatCardModule, MatProgressBarModule, MatIconModule, MatInputModule, MatFormFieldModule, MatSlideToggleModule, FormsModule],
+  imports: [MatCardModule, MatProgressBarModule, MatIconModule, MatInputModule, MatFormFieldModule, MatSlideToggleModule, FormsModule, MatDividerModule, MatToolbarModule],
   templateUrl: './reminder.component.html',
   styleUrl: './reminder.component.css'
 })

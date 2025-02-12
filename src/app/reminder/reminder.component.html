@@ -1,49 +1,41 @@
 <div class="container">
   <mat-card class="water-card">
     <mat-card-header>
-      <mat-card-title>Poopi's Water Reminder</mat-card-title>
-      <mat-card-subtitle>Stay hydrated !</mat-card-subtitle>
+      <mat-card-title>
+        <span class="title-text">Poopi's Water Reminder</span>
+        <span class="emoji">😍</span>
+      </mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
       <div class="stats">
-        <h3>Today's Progress</h3>
-        <mat-progress-bar
-          [value]="(glassesConsumed / dailyGoal) * 100"
-          color="primary"
-        ></mat-progress-bar>
-        <p>{{ glassesConsumed }} / {{ dailyGoal }} glasses</p>
+        <h3 class="section-title">Today's Progress</h3>
+        <mat-progress-bar [value]="(glassesConsumed / dailyGoal) * 100" color="primary"></mat-progress-bar>
+        <p class="progress-text">
+          <strong>{{ glassesConsumed }}</strong> / <strong>{{ dailyGoal }}</strong> glasses
+        </p>
       </div>
 
       <div class="actions">
-        <button mat-raised-button color="primary" (click)="addGlass()">
+        <button mat-raised-button color="primary" class="action-button" (click)="addGlass()">
           <mat-icon>local_drink</mat-icon>
           Add Glass
         </button>
 
-        <button mat-raised-button color="accent" (click)="resetCount()">
+        <button mat-raised-button color="accent" class="action-button" (click)="resetCount()">
           <mat-icon>refresh</mat-icon>
           Reset
         </button>
       </div>
 
-      <mat-form-field appearance="fill" class="reminder-interval">
+      <!-- <mat-form-field appearance="fill" class="reminder-interval">
         <mat-label>Reminder Interval (minutes)</mat-label>
-        <input
-        matInput
-          type="number"
-          [(ngModel)]="reminderInterval"
-          min="1"
-          (change)="updateReminderInterval()"
-        />
+        <input matInput type="number" [(ngModel)]="reminderInterval" min="1" (change)="updateReminderInterval()" />
       </mat-form-field>
 
-      <mat-slide-toggle
-        [(ngModel)]="remindersEnabled"
-        (change)="toggleReminders()"
-      >
+      <mat-slide-toggle [(ngModel)]="remindersEnabled" (change)="toggleReminders()" class="reminder-toggle">
         Enable Reminders
-      </mat-slide-toggle>
+      </mat-slide-toggle> -->
     </mat-card-content>
   </mat-card>
 </div>
